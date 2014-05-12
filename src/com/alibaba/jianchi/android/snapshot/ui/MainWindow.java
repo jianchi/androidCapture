@@ -3,6 +3,7 @@ package com.alibaba.jianchi.android.snapshot.ui;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Frame;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
@@ -60,7 +61,8 @@ public class MainWindow {
 
     public void init() {
         mainFrame = new JFrame("android Capture");
-        mainFrame.setSize(600, 800);
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        mainFrame.setSize(screenSize);
         mainFrame.setExtendedState(Frame.MAXIMIZED_BOTH);
 
         mainFrame.addWindowListener(new WindowAdapter() {
